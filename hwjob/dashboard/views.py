@@ -25,18 +25,19 @@ def search_client_view(request):
     if request.method == "GET":
         query = request.GET.get("query")
         if not query:
-            client_q = Client.objects.filter().all()
+            client_q = Client.objects.filter()
         else:
             client_q = Client.objects.filter(
                 Q(Q(id__icontains=query) | Q(full_name__icontains=query))
-            ).all()
+            )
+        client_q = client_q.annotate_anomaly().annotate_has_elec_heating()
         paginator = Paginator(client_q, 10)
 
         page = int(request.GET.get("page", 1))
 
         try:
             clients = paginator.page(page)
-            client_list = [{"id": c.id, "full_name": c.full_name} for c in clients]
+            client_list = [{"id": c.id, "full_name": c.full_name, "has_elec_heating": c.has_elec_heating, "has_anomaly": c.has_anomaly} for c in clients]
             return JsonResponse(
                 {
                     "clients": client_list,
