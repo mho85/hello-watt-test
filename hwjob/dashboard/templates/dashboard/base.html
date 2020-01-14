@@ -8,12 +8,6 @@
 
         <title>{{ meta.title }}</title>
         <meta name="description" content="{{ meta.description }}">
-
-        <script src="{% static "dashboard/js/eva.min.js" %}"></script>
-        {% block css %}
-            <link rel="stylesheet" href="{% static "dashboard/css/normalize.css" %}">
-            <link rel="stylesheet" href="{% static "dashboard/css/dashboard.css" %}">
-        {% endblock %}
     </head>
 
     <body>
@@ -21,9 +15,6 @@
         {% endblock %}
     </body>
 
-    <script>
-      eva.replace()
-    </script>
     {% block script %}
     {% endblock %}
 </html>

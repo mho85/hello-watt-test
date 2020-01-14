@@ -79,9 +79,10 @@ Ce qui existe déjà :
 
 Vous devez au minimum :
 
-- Faire un système pour recherche un client (à l'aide de l'API déjà en place)
+- Faire un système pour rechercher un client (à l'aide de l'API déjà en place)
 - Afficher la courbe de consommation de l'année passée (Bonus: afficher les courbes d'autres années), il vous faudra faire un peu de back pour y arriver
 - Afficher les détails d'un client (id, nom, possède un chauffage électrique, a des disfonctionnements sur son installation)
+- Completer la section "LANCER LE PROJET (À COMPLETER)" si besoin
 
 Django dispose d'un interface d'administration, consulter la documentation pour y accéder
 
@@ -99,15 +100,17 @@ Vous êtes libre de changer complétement l'application. Impressionez-nous !
 
 
 Le projet contient déjà les modèles de la base de données et quelques tests.
-Vous trouverez dans l'app dashboard un dossier fixtures et metadata. Les fixtures sont déjà chargées en base de données, vous n'aurez donc probablement pas besoin d'y toucher.
-Le dossier metadata contient des informations additionnelles sur les clients, il est là uniquement pour que vous puissiez tester vos résultats avec la "réalité".
+La base de donnée est déjà peuplée.
 
 ## Librairies à votre disposition
 
 Seul Django et Black (outil de formatage du code) sont listés en dépendances Python.
-En front eva-icons est installée (https://github.com/akveo/eva-icons#how-to-use).
 
-Vous êtes libre d'installer d'autres dépendances si besoin, que ce soit des dépendances Python (drf, ...), javascript (React, Vue, ...), css (bootstrap, tailwind, ...).
+Vous êtes libre d'installer d'autres dépendances si besoin: React, Vue, sass, bootstrap, tailwind, ....
+
+## LANCER LE PROJET (À COMPLETER)
+
+Si vos modifications implique plus que `python manage.py runserver` pour lancer le projet veuillez completer cette section. 
 
 ## Une fois terminé
 
