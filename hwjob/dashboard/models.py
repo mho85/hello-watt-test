@@ -36,9 +36,7 @@ class Consumption(MonthMixin):
         unique_together = ("client", "month", "year")
 
     def __str__(self):
-        return (
-            f"Conso of {self.client} ({self.month}/{self.year}): {self.kwh_consumed}"
-        )
+        return f"Conso of {self.client} ({self.month}/{self.year}): {self.kwh_consumed}"
 
     def get_absolute_url(self):
         return reverse("dashboard:consumption_details", kwargs={"client_id": self.pk})

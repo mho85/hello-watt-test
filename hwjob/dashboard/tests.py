@@ -1,8 +1,6 @@
 from django.test import TestCase, Client as DjClient
 from django.urls import reverse
 
-from dashboard.models import Client
-
 
 class DashBoardTestCase(TestCase):
     fixtures = ["prices", "clients", "consumptions"]
@@ -28,17 +26,22 @@ class HttpCodeTestCase(DashBoardTestCase):
         response = self.djclient.get(path)
         self.assertEqual(response.status_code, 404)
 
-    def test_clients_list_view(self):
-        path = reverse("dashboard:clients_list")
-        self.assertGet(path)
+    def test_client_search_valid(self):
+        query = "1"
+        path = f"{reverse('dashboard:search_client')}?query={query}"
+        response = self.djclient.get(path)
+        self.assertSuccess(response, path)
 
-    def test_404_consumption_view(self):
-        client_id = 0
-        path = reverse("dashboard:consumption_details", kwargs={"client_id": client_id})
-        self.assert404(path)
+    def test_client_search_with_page_valid(self):
+        query = "1"
+        page = "2"
+        path = f"{reverse('dashboard:search_client')}?query={query}&page={page}"
+        response = self.djclient.get(path)
+        self.assertSuccess(response, path)
 
-    def test_consumption_view(self):
-        clients_ids = Client.objects.values_list("pk", flat=True)
-        for cid in clients_ids:
-            path = reverse("dashboard:consumption_details", kwargs={"client_id": cid})
-            self.assertGet(path)
+    def test_client_search_with_page_invalid(self):
+        query = "1"
+        page = "8000"  # Only 5000 clients in our test DB
+        path = f"{reverse('dashboard:search_client')}?query={query}&page={page}"
+        response = self.djclient.get(path)
+        self.assertEqual(response.status_code, 400)
