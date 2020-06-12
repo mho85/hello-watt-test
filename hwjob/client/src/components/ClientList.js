@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -8,45 +9,81 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-const ClientList = (props) => {
+import { Button } from '@material-ui/core';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
-    if (props.clientData.length === 0) {
-        return null;
+import { fetchClients } from '../actions';
+
+
+class ClientList extends Component {
+
+    componentDidMount() {
+        this.props.fetchClients(undefined, 1);
     }
 
-    const { clients } = props.clientData;
-    console.log("ClientList:", clients);
+    componentDidUpdate(prevProps) {
+        const { query } = this.props;
+        if (query === "Mr." || query === "Miss" || query === "Mrs.") {
+            console.log("Titles not allowed to refresh the table")
+            return;
+        }
 
-    return (
-        <div>
-            <TableContainer component={Paper}>
-                <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>ID</TableCell>
-                            <TableCell>Last Name</TableCell>
-                            <TableCell>First Name</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {clients.map(c => {
-                            return (
-                                <TableRow key={c.id}>
-                                    <TableCell>{c.id}</TableCell>
-                                    <TableCell>{c.full_name.split(" ")[1].toUpperCase()}</TableCell>
-                                    <TableCell>{c.full_name.split(" ")[0]}</TableCell>
-                                </TableRow>
-                            );
-                        })}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </div >
-    );
+        if (prevProps.query !== query) {
+            this.props.fetchClients(query, 1);
+        };
+    }
+
+    render() {
+        // console.log("ClientList:", this.props);
+        if (this.props.clientData.length === 0) {
+            return null;
+        }
+
+        const { clients } = this.props.clientData;
+        return (
+            <div>
+                <TableContainer component={Paper}>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>ID</TableCell>
+                                <TableCell>Full name</TableCell>
+                                <TableCell></TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {clients.map(c => {
+                                return (
+                                    <TableRow key={c.id}>
+                                        <TableCell>{c.id}</TableCell>
+                                        <TableCell>{c.full_name}</TableCell>
+                                        <TableCell>
+                                            <Link to={`/clients/${c.id}`}>
+                                                <Button variant="contained" style={{ backgroundColor: "#1fa5d7", color: "white" }}>
+                                                    <AccountCircleIcon />
+                                                    {/* <span style={{ marginLeft: "5px" }}>Profile</span> */}
+                                                </Button>
+                                            </Link>
+
+                                        </TableCell>
+                                    </TableRow>
+                                );
+                            })}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </div >
+        );
+    }
 }
 
 const mapStateToProps = (state) => {
-    return { clientData: state.clients };
+    return {
+        clientData: state.clients,
+        query: state.query
+    };
 };
 
-export default connect(mapStateToProps)(ClientList);
+const mapDispatchToProps = { fetchClients };
+
+export default connect(mapStateToProps, mapDispatchToProps)(ClientList);

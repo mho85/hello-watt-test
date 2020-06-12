@@ -23,3 +23,10 @@ export const fetchClients = (query, page) => {
     };
 
 };
+
+export const setQuery = (q) => {
+    return {
+        type: 'SET_QUERY',
+        payload: q
+    }
+}
