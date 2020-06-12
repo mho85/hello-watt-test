@@ -22,18 +22,18 @@ class ClientPortal extends Component {
                     <title>Clients | Hello Watt</title>
                 </Helmet>
                 -ClientPortal
+                <hr />
                 <SearchClient />
+                <hr />
                 <AddClient />
+                <hr />
                 <ClientList />
             </div>
         );
     }
 }
 
-const mapStateToProps = (state) => {
-    return { clients: state.clients };
-};
 
 const mapDispatchToProps = { fetchClients };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ClientPortal);
+export default connect(null, mapDispatchToProps)(ClientPortal);
