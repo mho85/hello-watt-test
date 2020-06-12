@@ -34,12 +34,11 @@ class ClientList extends Component {
     }
 
     render() {
-        // console.log("ClientList:", this.props);
-        if (this.props.clientData.length === 0) {
+        console.log("ClientList:", this.props);
+        if (!this.props.clients) {
             return null;
         }
 
-        const { clients } = this.props.clientData;
         return (
             <div>
                 <TableContainer component={Paper}>
@@ -52,7 +51,7 @@ class ClientList extends Component {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {clients.map(c => {
+                            {this.props.clients.map(c => {
                                 return (
                                     <TableRow key={c.id}>
                                         <TableCell>{c.id}</TableCell>
@@ -78,8 +77,11 @@ class ClientList extends Component {
 }
 
 const mapStateToProps = (state) => {
+    const { clients, page, page_count } = state.clients;
     return {
-        clientData: state.clients,
+        clients,
+        page,
+        page_count,
         query: state.query
     };
 };
