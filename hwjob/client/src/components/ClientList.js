@@ -8,34 +8,46 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import ReactPaginate from 'react-paginate';
 
 import { Button } from '@material-ui/core';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
-import { fetchClients } from '../actions';
+import { fetchClients, setPage } from '../actions';
 
 
 class ClientList extends Component {
+
+    handlePageChange = (page) => {
+        console.log(`Active page is ${page}`);
+        this.props.setPage(page);
+    }
 
     componentDidMount() {
         this.props.fetchClients(undefined, 1);
     }
 
     componentDidUpdate(prevProps) {
-        const { query } = this.props;
-        if (query === "Mr." || query === "Miss" || query === "Mrs.") {
-            console.log("Titles not allowed to refresh the table")
-            return;
-        }
+        const { query, page } = this.props;
+        console.log(prevProps.page, page);
 
         if (prevProps.query !== query) {
             this.props.fetchClients(query, 1);
         };
+
+        if (prevProps.page !== page) {
+            this.props.fetchClients(query, page);
+        };
     }
 
+    handlePageClick = (data) => {
+        // console.log("data", data);
+        this.props.setPage(data.selected + 1);
+    };
+
     render() {
-        console.log("ClientList:", this.props);
-        if (!this.props.clients) {
+        console.log("ClientList, props:", this.props);
+        if (!this.props.data.clients) {
             return null;
         }
 
@@ -51,7 +63,7 @@ class ClientList extends Component {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {this.props.clients.map(c => {
+                            {this.props.data.clients.map(c => {
                                 return (
                                     <TableRow key={c.id}>
                                         <TableCell>{c.id}</TableCell>
@@ -60,10 +72,8 @@ class ClientList extends Component {
                                             <Link to={`/clients/${c.id}`}>
                                                 <Button variant="contained" style={{ backgroundColor: "#1fa5d7", color: "white" }}>
                                                     <AccountCircleIcon />
-                                                    {/* <span style={{ marginLeft: "5px" }}>Profile</span> */}
                                                 </Button>
                                             </Link>
-
                                         </TableCell>
                                     </TableRow>
                                 );
@@ -71,21 +81,33 @@ class ClientList extends Component {
                         </TableBody>
                     </Table>
                 </TableContainer>
-            </div >
+                <ReactPaginate
+                    previousLabel={'previous'}
+                    nextLabel={'next'}
+                    breakLabel={'...'}
+                    breakClassName={'break-me'}
+                    pageCount={this.props.data.page_count}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={5}
+                    onPageChange={this.handlePageClick}
+                    containerClassName={'pagination'}
+                    subContainerClassName={'pages pagination'}
+                    activeClassName={'active'}
+                />
+            </div>
         );
     }
 }
 
 const mapStateToProps = (state) => {
-    const { clients, page, page_count } = state.clients;
+    console.log("ClientList, state", state);
     return {
-        clients,
-        page,
-        page_count,
-        query: state.query
+        data: state.clients,
+        query: state.query,
+        page: state.page
     };
 };
 
-const mapDispatchToProps = { fetchClients };
+const mapDispatchToProps = { fetchClients, setPage };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ClientList);

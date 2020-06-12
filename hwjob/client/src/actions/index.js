@@ -30,3 +30,10 @@ export const setQuery = (q) => {
         payload: q
     }
 }
+
+export const setPage = (page) => {
+    return {
+        type: 'SET_PAGE',
+        payload: page
+    }
+}
