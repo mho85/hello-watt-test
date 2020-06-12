@@ -1,9 +1,6 @@
 import { combineReducers } from 'redux';
-
-const dummyReducer = () => {
-    return "dummy"
-};
+import clientsReducer from './clientsReducer';
 
 export default combineReducers({
-    dummyReducer
+    clients: clientsReducer
 });
