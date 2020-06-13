@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-const ClientConsumption = () => {
-    return <div>--ClientConsumption</div>;
-}
+class ClientConsumption extends Component {
 
-export default ClientConsumption;
+    componentDidMount() {
+        // const id = Number(this.props.match.params.id);
+    };
+
+    render() {
+        return (
+            <div>--ClientConsumption</div>
+        );
+    }
+};
+
+// const mapStateToProps = (state) => {
+
+// }
+
+// const mapDispatchToProps = {};
+
+export default connect(null)(ClientConsumption);

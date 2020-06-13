@@ -14,7 +14,6 @@ export const fetchClients = (query, page) => {
         }
 
         const response = await ClientService.get(url);
-        // console.log("Action-response: ", response);
 
         dispatch({
             type: 'FETCH_CLIENTS',
@@ -22,6 +21,21 @@ export const fetchClients = (query, page) => {
         });
     };
 
+};
+
+export const fetchClient = (id) => {
+    return async (dispatch) => {
+
+        const response = await ClientService.get(`/api/search-clients?query=${id}`);
+        const selectedUser = response.data.clients.find(c => c.id === id);
+        // console.log("FETCH_CLIENT - selectedUser: ", selectedUser);
+
+
+        dispatch({
+            type: 'FETCH_CLIENT',
+            payload: selectedUser
+        });
+    };
 };
 
 export const setQuery = (q) => {
