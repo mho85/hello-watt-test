@@ -13,10 +13,6 @@ class ClientConsumption extends Component {
         );
     }
 
-    componentDidMount() {
-        // const id = Number(this.props.match.params.id);
-    };
-
     render() {
         const lastYear = new Date().getFullYear() - 1;
         const data = this.filterData(this.props.id, lastYear)
