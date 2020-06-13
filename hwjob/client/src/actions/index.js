@@ -1,19 +1,21 @@
-import ClientService from '../api/ClientService';
+import ServerService from '../api/ServerService';
+
+const searchClientURI = "/search-clients";
 
 export const fetchClients = (query, page) => {
 
     return async (dispatch) => {
-        let url = "/api/search-clients";
+        let q;
 
         if (query && page) {
-            url += `?query=${query}&&page=${page}`;
+            q = `?query=${query}&&page=${page}`;
         } else if (query) {
-            url += `?query=${query}`;
+            q = `?query=${query}`;
         } else {
-            url += `?page=${page}`;
+            q = `?page=${page}`;
         }
 
-        const response = await ClientService.get(url);
+        const response = await ServerService.get(`${searchClientURI}${q}`);
 
         dispatch({
             type: 'FETCH_CLIENTS',
@@ -26,7 +28,7 @@ export const fetchClients = (query, page) => {
 export const fetchClient = (id) => {
     return async (dispatch) => {
 
-        const response = await ClientService.get(`/api/search-clients?query=${id}`);
+        const response = await ServerService.get(`${searchClientURI}?query=${id}`);
         const selectedUser = response.data.clients.find(c => c.id === id);
         // console.log("FETCH_CLIENT - selectedUser: ", selectedUser);
 

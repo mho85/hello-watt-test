@@ -37,7 +37,8 @@ def search_client_view(request):
 
         try:
             clients = paginator.page(page)
-            client_list = [{"id": c.id, "full_name": c.full_name, "has_elec_heating": c.has_elec_heating, "has_anomaly": c.has_anomaly} for c in clients]
+            client_list = [{"id": c.id, "full_name": c.full_name,
+                            "has_elec_heating": c.has_elec_heating, "has_anomaly": c.has_anomaly} for c in clients]
             return JsonResponse(
                 {
                     "clients": client_list,

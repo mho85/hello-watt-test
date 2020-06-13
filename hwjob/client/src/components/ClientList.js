@@ -29,7 +29,7 @@ class ClientList extends Component {
 
     componentDidUpdate(prevProps) {
         const { query, page } = this.props;
-        console.log(prevProps.page, page);
+        // console.log(prevProps.page, page);
 
         if (prevProps.query !== query) {
             this.props.fetchClients(query, 1);
@@ -41,12 +41,11 @@ class ClientList extends Component {
     }
 
     handlePageClick = (data) => {
-        // console.log("data", data);
         this.props.setPage(data.selected + 1);
     };
 
     render() {
-        console.log("ClientList, props:", this.props);
+        // console.log("ClientList, props:", this.props);
         if (!this.props.data.clients) {
             return null;
         }
@@ -100,7 +99,7 @@ class ClientList extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log("ClientList, state", state);
+    // console.log("ClientList, state", state);
     return {
         data: state.clients,
         query: state.query,
