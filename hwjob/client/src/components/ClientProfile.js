@@ -7,13 +7,12 @@ import ClientConsumption from './ClientConsumption';
 
 const ClientProfile = (props) => {
 
-    const username = "John Doe";
     const id = Number(props.match.params.id);
 
     return (
         <div>
             <Helmet>
-                <title>{username}'s profile | Hello watt</title>
+                <title>Client profile | Hello Watt</title>
             </Helmet>
                 -ClientProfile
             <hr />

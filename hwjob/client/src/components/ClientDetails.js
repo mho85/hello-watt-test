@@ -44,7 +44,7 @@ class ClientDetails extends Component {
 
         return (
             <div>
-                <h2>Client information</h2>
+                <h2>Client details</h2>
                 <form onSubmit={this.handleSubmit}>
                     <TextField
                         label="Name"
