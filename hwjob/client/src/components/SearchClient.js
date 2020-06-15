@@ -10,7 +10,7 @@ const SearchClient = (props) => {
     // console.log("SearchClient.js", props)
 
     return (
-        <div id="SearchClient">
+        <div id="search-client">
             <TextField
                 label="Enter name or ID"
                 type="text"

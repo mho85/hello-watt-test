@@ -11,7 +11,7 @@ import Paper from '@material-ui/core/Paper';
 import ReactPaginate from 'react-paginate';
 import { Button } from '@material-ui/core';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import ErrorIcon from '@material-ui/icons/Error';
+import WarningIcon from '@material-ui/icons/Warning';
 
 import { fetchClients, setPage } from '../actions';
 
@@ -52,8 +52,8 @@ class ClientList extends Component {
 
         if (this.props.data.clients.length === 0) {
             return (
-                <div class="error">
-                    <ErrorIcon />
+                <div class="warning">
+                    <WarningIcon />
                     <span>No clients found.</span>
                 </div>
             );

@@ -1,4 +1,4 @@
-div#SearchClient {
+div#search-client {
 	display: flex;
 	justify-content: center;
 	padding: 3vh 0;
@@ -10,17 +10,17 @@ div#SearchClient {
 	box-shadow: 0px 0px 3px 0px rgba(31, 165, 215, 0.75);
 }
 
-div#SearchClient .MuiTextField-root label {
+div#search-client .MuiTextField-root label {
 	color: #1fa5d7;
 }
 
-div#SearchClient .MuiTextField-root input {
+div#search-client .MuiTextField-root input {
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
 		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	color: #163e5c;
 }
 
-div#SearchClient .MuiTextField-root .MuiInput-underline::before,
-div#SearchClient .MuiTextField-root .MuiInput-underline::after {
+div#search-client .MuiTextField-root .MuiInput-underline::before,
+div#search-client .MuiTextField-root .MuiInput-underline::after {
 	border-bottom-color: #1fa5d7;
 }

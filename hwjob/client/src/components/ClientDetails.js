@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ServerService from '../api/ServerService';
+import '../styles/ClientDetails.css';
 
 import TextField from '@material-ui/core/TextField';
+import ErrorIcon from '@material-ui/icons/Error';
+import FlashOnIcon from '@material-ui/icons/FlashOn';
 
 import { fetchClient } from '../actions';
 
@@ -43,8 +46,8 @@ class ClientDetails extends Component {
         const c = this.props.client;
 
         return (
-            <div>
-                <h2>Client details</h2>
+            <div id="client-details">
+                <h4>CLIENT</h4>
                 <form onSubmit={this.handleSubmit}>
                     <TextField
                         label="Name"
@@ -53,12 +56,28 @@ class ClientDetails extends Component {
                     />
                     <input
                         type="submit"
-                        value="Change"
+                        value="CHANGE"
                     />
                 </form>
                 <ul>
-                    <li>Electric heating: {c.has_elec_heating ? "Yes" : "No"}</li>
-                    <li>Any anomalies detected? {c.has_anomaly ? "Yes" : "No"}</li>
+                    {c.has_elec_heating ?
+                        <li>
+                            <div id="elec-heating">
+                                <FlashOnIcon />
+                                Electrical heating
+                            </div>
+                        </li>
+                        : null}
+                    {c.has_anomaly ?
+                        <li>
+                            <div className="error">
+                                <ErrorIcon />
+                            Anomaly detected
+                            </div>
+                        </li> :
+                        null
+                    }
+                    {/* <li>Any anomalies detected? {c.has_anomaly ? "Yes" : "No"}</li> */}
                 </ul>
             </div>
         );

@@ -16,7 +16,7 @@ div.title h3 {
 	margin-left: 2vw;
 }
 
-div.error {
+div.warning {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -25,6 +25,14 @@ div.error {
 	font-family: 'Noto Sans';
 }
 
+div.warning *,
 div.error * {
 	margin: 0 2px;
+}
+
+div.error {
+	display: flex;
+	align-items: center;
+	color: red;
+	font-size: small;
 }
