@@ -14,7 +14,8 @@ class ClientDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ""
+            name: "",
+            updated: false
         }
     }
 
@@ -28,7 +29,8 @@ class ClientDetails extends Component {
         const data = new FormData();
         data.append('full_name', this.state.name);
         ServerService.post(`/client/${this.props.id}`, data)
-            .then(() => console.log("Username updated successfully."))
+            .then(() => this.setState({ updated: true }));
+        setTimeout(() => { this.setState({ updated: false }) }, 1000)
     }
 
     componentDidMount() {
@@ -56,7 +58,7 @@ class ClientDetails extends Component {
                     />
                     <input
                         type="submit"
-                        value="CHANGE"
+                        value={this.state.updated ? "CHANGED!" : "CHANGE"}
                     />
                 </form>
                 <ul>
@@ -77,7 +79,6 @@ class ClientDetails extends Component {
                         </li> :
                         null
                     }
-                    {/* <li>Any anomalies detected? {c.has_anomaly ? "Yes" : "No"}</li> */}
                 </ul>
             </div>
         );
