@@ -1,0 +1,21 @@
+div#client-list div.MuiPaper-root {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+div#client-list div.MuiPaper-elevation1 {
+	box-shadow: none;
+}
+div#client-list table {
+	width: 95%;
+}
+div#client-list table thead {
+	background-color: #1fa5d7b3;
+}
+div#client-list table th {
+	color: white;
+}
+div#client-list table td {
+	color: gray;
+}

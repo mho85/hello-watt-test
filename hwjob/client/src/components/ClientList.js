@@ -9,10 +9,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import ReactPaginate from 'react-paginate';
-import { Button } from '@material-ui/core';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import WarningIcon from '@material-ui/icons/Warning';
 import '../styles/paginate.css';
+import '../styles/ClientList.css';
 
 import { fetchClients, setPage } from '../actions';
 
@@ -61,7 +60,33 @@ class ClientList extends Component {
         }
 
         return (
-            <div>
+            <div id="client-list">
+                <TableContainer component={Paper}>
+                    <Table size="small">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell align="center">ID</TableCell>
+                                <TableCell align="left">Full name</TableCell>
+                                <TableCell align="left"></TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {this.props.data.clients.map(c => {
+                                return (
+                                    <TableRow key={c.id}>
+                                        <TableCell align="center">{c.id}</TableCell>
+                                        <TableCell align="left">{c.full_name}</TableCell>
+                                        <TableCell align="left">
+                                            <Link to={`/clients/${c.id}`}>
+                                                <div class="link">{'>'}</div>
+                                            </Link>
+                                        </TableCell>
+                                    </TableRow>
+                                );
+                            })}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
                 <ReactPaginate
                     previousLabel={'previous'}
                     nextLabel={'next'}
@@ -75,34 +100,6 @@ class ClientList extends Component {
                     subContainerClassName={'pages pagination'}
                     activeClassName={'active'}
                 />
-                <TableContainer component={Paper}>
-                    <Table>
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>ID</TableCell>
-                                <TableCell>Full name</TableCell>
-                                <TableCell></TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {this.props.data.clients.map(c => {
-                                return (
-                                    <TableRow key={c.id}>
-                                        <TableCell>{c.id}</TableCell>
-                                        <TableCell>{c.full_name}</TableCell>
-                                        <TableCell>
-                                            <Link to={`/clients/${c.id}`}>
-                                                <Button variant="contained" style={{ backgroundColor: "#1fa5d7", color: "white" }}>
-                                                    <AccountCircleIcon />
-                                                </Button>
-                                            </Link>
-                                        </TableCell>
-                                    </TableRow>
-                                );
-                            })}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
             </div>
         );
     }

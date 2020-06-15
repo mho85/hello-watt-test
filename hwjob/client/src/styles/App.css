@@ -41,3 +41,14 @@ div.error {
 	color: red;
 	font-size: small;
 }
+
+div.link {
+	text-align: center;
+	color: #1fa5d7;
+	transition: transform 0.5s;
+}
+
+div.link:hover {
+	transform: scale(2.5);
+	color: orange;
+}
