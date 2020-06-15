@@ -62,6 +62,19 @@ class ClientList extends Component {
 
         return (
             <div>
+                <ReactPaginate
+                    previousLabel={'previous'}
+                    nextLabel={'next'}
+                    breakLabel={'...'}
+                    breakClassName={'break-me'}
+                    pageCount={this.props.data.page_count}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={2}
+                    onPageChange={this.handlePageClick}
+                    containerClassName={'pagination'}
+                    subContainerClassName={'pages pagination'}
+                    activeClassName={'active'}
+                />
                 <TableContainer component={Paper}>
                     <Table>
                         <TableHead>
@@ -90,19 +103,6 @@ class ClientList extends Component {
                         </TableBody>
                     </Table>
                 </TableContainer>
-                <ReactPaginate
-                    previousLabel={'previous'}
-                    nextLabel={'next'}
-                    breakLabel={'...'}
-                    breakClassName={'break-me'}
-                    pageCount={this.props.data.page_count}
-                    marginPagesDisplayed={2}
-                    pageRangeDisplayed={2}
-                    onPageChange={this.handlePageClick}
-                    containerClassName={'pagination'}
-                    subContainerClassName={'pages pagination'}
-                    activeClassName={'active'}
-                />
             </div>
         );
     }
