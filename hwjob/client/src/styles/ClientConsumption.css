@@ -1,0 +1,11 @@
+div#client-consumption {
+	text-align: center;
+	margin: 0 5vw 5vh;
+	padding: 10px 0;
+	border: 1px solid #1fa5d7;
+	background-color: white;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 3px 0px #1fa5d7;
+	-moz-box-shadow: 0px 0px 3px 0px #1fa5d7;
+	box-shadow: 0px 0px 3px 0px #1fa5d7;
+}

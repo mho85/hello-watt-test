@@ -16,6 +16,11 @@ div.title h3 {
 	margin-left: 2vw;
 }
 
+h4 {
+	color: #1fa5d7;
+	margin-bottom: 1vh;
+}
+
 div.warning {
 	display: flex;
 	justify-content: center;
