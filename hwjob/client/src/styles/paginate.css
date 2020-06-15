@@ -1,0 +1,28 @@
+ul.pagination {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	list-style: none;
+	background-color: #1fa5d7b3;
+	border-radius: 20px;
+	margin: 2vh 2vw;
+	padding: 5px 15px;
+}
+
+ul.pagination li {
+	color: white;
+	font-size: x-small;
+	padding: 5px 0;
+	width: 13%;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+ul.pagination li.active {
+	font-size: large;
+	font-weight: 700;
+}
+
+ul.pagination li.disabled {
+	color: lightgray;
+}

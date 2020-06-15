@@ -12,6 +12,7 @@ import ReactPaginate from 'react-paginate';
 import { Button } from '@material-ui/core';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import WarningIcon from '@material-ui/icons/Warning';
+import '../styles/paginate.css';
 
 import { fetchClients, setPage } from '../actions';
 
@@ -96,7 +97,7 @@ class ClientList extends Component {
                     breakClassName={'break-me'}
                     pageCount={this.props.data.page_count}
                     marginPagesDisplayed={2}
-                    pageRangeDisplayed={5}
+                    pageRangeDisplayed={2}
                     onPageChange={this.handlePageClick}
                     containerClassName={'pagination'}
                     subContainerClassName={'pages pagination'}

@@ -11,6 +11,10 @@ body {
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+body * {
+	outline: none;
+}
+
 a:link {
 	text-decoration: none;
 }
