@@ -17,8 +17,14 @@ div.title h3 {
 }
 
 div.error {
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	color: orange;
 	font-size: small;
 	font-family: 'Noto Sans';
+}
+
+div.error * {
+	margin: 0 2px;
 }

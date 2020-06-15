@@ -9,9 +9,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import ReactPaginate from 'react-paginate';
-
 import { Button } from '@material-ui/core';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ErrorIcon from '@material-ui/icons/Error';
 
 import { fetchClients, setPage } from '../actions';
 
@@ -53,6 +53,7 @@ class ClientList extends Component {
         if (this.props.data.clients.length === 0) {
             return (
                 <div class="error">
+                    <ErrorIcon />
                     <span>No clients found.</span>
                 </div>
             );
