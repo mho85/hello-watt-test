@@ -62,7 +62,7 @@ const NavBar = () => {
                         onClose={handleClose}
                     >
                         <MenuItem onClick={handleClose}>
-                            <Link to="/">
+                            <Link to="/" style={{ display: "flex" }}>
                                 <HomeIcon style={{ color: "#1fa5d7" }} />
                                 <span style={{
                                     paddingLeft: "5px",

@@ -1,0 +1,12 @@
+h3 {
+	color: white;
+	background: rgb(31, 165, 215);
+	background: linear-gradient(
+		90deg,
+		rgba(31, 165, 215, 1) 0%,
+		rgba(240, 247, 252, 1) 100%
+	);
+	font-family: 'Noto Sans';
+	border-bottom: 2px solid #f0f7fc;
+	padding: 1vh 5vw;
+}

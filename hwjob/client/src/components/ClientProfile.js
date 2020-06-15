@@ -14,10 +14,8 @@ const ClientProfile = (props) => {
             <Helmet>
                 <title>Client profile | Hello Watt</title>
             </Helmet>
-                -ClientProfile
-            <hr />
+            <h3>Client Profile</h3>
             <ClientDetails id={id} />
-            <hr />
             <ClientConsumption id={id} />
         </div>
     );

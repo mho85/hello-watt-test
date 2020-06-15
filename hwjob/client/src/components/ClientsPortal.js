@@ -13,10 +13,8 @@ const ClientPortal = () => {
             <Helmet>
                 <title>Clients | Hello Watt</title>
             </Helmet>
-                -ClientPortal
-            <hr />
+            <h3>Client Portal</h3>
             <SearchClient />
-            <hr />
             <ClientList />
         </div>
     );
