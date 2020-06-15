@@ -9,80 +9,79 @@ Le projet possède déjà une base de données contenant les informations de con
 
 Ce qui existe déjà :
 
-- Une API (à compléter)
-    - GET `/api/search-clients` Permet de rechercher un client
-        
-        Paramètres :
-        
-        - `query` La recherche à effectuer (cherche l'ID ou le nom du client)
-        - `page` Le numéro de page pour la pagination
-        
-        Réponse :
-        ```json
-        {
-          "clients": [
-            {
-              "id": 1,
-              "full_name": "Katie Larson"
-            },
-            {
-              "id": 2,
-              "full_name": "Jennifer Boyer"
-            },
-            {
-              "id": 3,
-              "full_name": "Emily Proctor"
-            },
-            {
-              "id": 4,
-              "full_name": "Jeffrey Blair"
-            },
-            {
-              "id": 5,
-              "full_name": "Kevin Schneider"
-            },
-            {
-              "id": 6,
-              "full_name": "Elizabeth Trujillo"
-            },
-            {
-              "id": 7,
-              "full_name": "Jaclyn Cruz"
-            },
-            {
-              "id": 8,
-              "full_name": "Sergio Davis"
-            },
-            {
-              "id": 9,
-              "full_name": "David Cole"
-            },
-            {
-              "id": 10,
-              "full_name": "Kimberly Thomas"
-            }
-          ],
-          "page": 1,
-          "page_count": 500
-        }
-        
-    - POST `/api/client/<client_id>` Permet de mettre à jour le nom d'un client
-    
-        Réponse :
-        
-        ```json
-        {
-          "result": "ok"
-        }
+-   Une API (à compléter)
 
-- Une page root vide: `http://127.0.0.1:8000`
+    -   GET `/api/search-clients` Permet de rechercher un client
+        Paramètres :
+        -   `query` La recherche à effectuer (cherche l'ID ou le nom du client)
+        -   `page` Le numéro de page pour la pagination
+        Réponse :
+        ```json
+        {
+        	"clients": [
+        		{
+        			"id": 1,
+        			"full_name": "Katie Larson"
+        		},
+        		{
+        			"id": 2,
+        			"full_name": "Jennifer Boyer"
+        		},
+        		{
+        			"id": 3,
+        			"full_name": "Emily Proctor"
+        		},
+        		{
+        			"id": 4,
+        			"full_name": "Jeffrey Blair"
+        		},
+        		{
+        			"id": 5,
+        			"full_name": "Kevin Schneider"
+        		},
+        		{
+        			"id": 6,
+        			"full_name": "Elizabeth Trujillo"
+        		},
+        		{
+        			"id": 7,
+        			"full_name": "Jaclyn Cruz"
+        		},
+        		{
+        			"id": 8,
+        			"full_name": "Sergio Davis"
+        		},
+        		{
+        			"id": 9,
+        			"full_name": "David Cole"
+        		},
+        		{
+        			"id": 10,
+        			"full_name": "Kimberly Thomas"
+        		}
+        	],
+        	"page": 1,
+        	"page_count": 500
+        }
+        ```
+    -   POST `/api/client/<client_id>` Permet de mettre à jour le nom d'un client
+
+        Réponse :
+
+        ```json
+        {
+        	"result": "ok"
+        }
+        ```
+
+-   Une page root vide: `http://127.0.0.1:8000`
 
 Vous devez au minimum :
 
-- Faire un système pour rechercher un client (à l'aide de l'API déjà en place)
-- Afficher la courbe de consommation de l'année passée (Bonus: afficher les courbes d'autres années), il vous faudra faire un peu de back pour y arriver
-- Afficher les détails d'un client (id, nom, possède un chauffage électrique, a des disfonctionnements sur son installation)
-- Completer la section "LANCER LE PROJET (À COMPLETER)" si besoin
+-   Faire un système pour rechercher un client (à l'aide de l'API déjà en place)
+-   Afficher la courbe de consommation de l'année passée (Bonus: afficher les courbes d'autres années), il vous faudra faire un peu de back pour y arriver
+-   Afficher les détails d'un client (id, nom, possède un chauffage électrique, a des disfonctionnements sur son installation)
+-   Completer la section "LANCER LE PROJET (À COMPLETER)" si besoin
 
 Django dispose d'un interface d'administration, consulter la documentation pour y accéder
 
@@ -94,10 +93,9 @@ Vous êtes libre de changer complétement l'application. Impressionez-nous !
 
 ## Mise en place
 
-- Cloner ce dépo (ne pas en faire un fork)
-- Installer les dépendances se trouvant dans requirements.txt
-- Démarrer le serveur: `python manage.py runserver`
-
+-   Cloner ce dépo (ne pas en faire un fork)
+-   Installer les dépendances se trouvant dans requirements.txt
+-   Démarrer le serveur: `python manage.py runserver`
 
 Le projet contient déjà les modèles de la base de données et quelques tests.
 La base de donnée est déjà peuplée.
@@ -108,14 +106,23 @@ Seul Django et Black (outil de formatage du code) sont listés en dépendances P
 
 Vous êtes libre d'installer d'autres dépendances si besoin: React, Vue, sass, bootstrap, tailwind, ....
 
-## LANCER LE PROJET (À COMPLETER)
+## LANCER LE PROJET
 
-Si vos modifications implique plus que `python manage.py runserver` pour lancer le projet veuillez completer cette section. 
+Pour la 1e fois uniquement :
+
+-   Aller dans le répertoire "client"
+-   Exécuter `npm install` pour installer les packages NPM utilisés par le client
+
+Sinon à chaque fois :
+
+-   Lancer le serveur `python manage.py runserver`
+-   Exécuter `npm start` pour démarrer l'application client
 
 ## Une fois terminé
 
 Une fois que vous avez terminé, merci de contacter votre correspondant chez Hello Watt.
 
 Envoyez vos résultats :
-- Sous la forme d'un lien Github (ou Gitlab, ou autre) vers votre projet. **Attention, votre projet doit être privé**, partagez-le uniquement avec votre correspondant Hello Watt.
-- Par email avec le zip du projet (Cela ne vous exempt pas de commit vos changements réguliérement. N'oubliez pas le dossier .git dans le zip).
+
+-   Sous la forme d'un lien Github (ou Gitlab, ou autre) vers votre projet. **Attention, votre projet doit être privé**, partagez-le uniquement avec votre correspondant Hello Watt.
+-   Par email avec le zip du projet (Cela ne vous exempt pas de commit vos changements réguliérement. N'oubliez pas le dossier .git dans le zip).
