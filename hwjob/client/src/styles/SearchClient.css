@@ -2,7 +2,7 @@ div#SearchClient {
 	display: flex;
 	justify-content: center;
 	padding: 3vh 0;
-	margin: 5vh 15vw;
+	margin: 3vh 15vw;
 	background-color: rgba(31, 165, 215, 0.3);
 	border-radius: 10px;
 	-webkit-box-shadow: 0px 0px 3px 0px rgba(31, 165, 215, 0.75);
