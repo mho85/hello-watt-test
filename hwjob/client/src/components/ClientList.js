@@ -52,7 +52,7 @@ class ClientList extends Component {
 
         if (this.props.data.clients.length === 0) {
             return (
-                <div class="warning">
+                <div className="warning">
                     <WarningIcon />
                     <span>No clients found.</span>
                 </div>
@@ -78,7 +78,7 @@ class ClientList extends Component {
                                         <TableCell align="left">{c.full_name}</TableCell>
                                         <TableCell align="left">
                                             <Link to={`/clients/${c.id}`}>
-                                                <div class="link">{'>'}</div>
+                                                <div className="link">{'>'}</div>
                                             </Link>
                                         </TableCell>
                                     </TableRow>

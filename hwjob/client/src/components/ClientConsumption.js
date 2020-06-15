@@ -17,7 +17,7 @@ class ClientConsumption extends Component {
     render() {
         const lastYear = new Date().getFullYear() - 1;
         const data = this.filterData(this.props.id, lastYear)
-        console.log(data)
+        // console.log(data)
 
         const colorMain = "#1fa5d7";
 
