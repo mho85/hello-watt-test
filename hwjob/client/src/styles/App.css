@@ -15,3 +15,10 @@ div.title {
 div.title h3 {
 	margin-left: 2vw;
 }
+
+div.error {
+	text-align: center;
+	color: orange;
+	font-size: small;
+	font-family: 'Noto Sans';
+}

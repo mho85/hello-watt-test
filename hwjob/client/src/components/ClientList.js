@@ -50,6 +50,14 @@ class ClientList extends Component {
             return null;
         }
 
+        if (this.props.data.clients.length === 0) {
+            return (
+                <div class="error">
+                    <span>No clients found.</span>
+                </div>
+            );
+        }
+
         return (
             <div>
                 <TableContainer component={Paper}>
