@@ -1,11 +1,18 @@
+// MODULES
 import React from 'react';
 import { connect } from 'react-redux';
+
+// STYLESHEETS
 import TextField from '@material-ui/core/TextField';
 import '../styles/SearchClient.css';
 
+// REDUX
 import { setQuery } from '../actions';
 
-
+/**
+ * SearchClient Component displays an input for user queries.
+ * @param {*} props 
+ */
 const SearchClient = (props) => {
     // console.log("SearchClient.js", props)
 

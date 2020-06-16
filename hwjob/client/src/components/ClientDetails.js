@@ -1,14 +1,25 @@
+// MODULES
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ServerService from '../api/ServerService';
-import '../styles/ClientDetails.css';
 
+// SERVICES
+import ServerService from '../api/ServerService';
+
+// STYLESHEETS
+import '../styles/ClientDetails.css';
 import TextField from '@material-ui/core/TextField';
 import ErrorIcon from '@material-ui/icons/Error';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
 
+// REDUX
 import { fetchClient } from '../actions';
 
+/**
+ * ClientDetails displays the client data: 
+ * Name (editable)
+ * Electrical heating (if applicable)
+ * Anomaly (if applicable)
+ */
 class ClientDetails extends Component {
 
     constructor(props) {

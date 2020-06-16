@@ -1,6 +1,11 @@
+// MODULES
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+
+// STYLESHEETS
+import '../styles/paginate.css';
+import '../styles/ClientList.css';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -10,12 +15,13 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import ReactPaginate from 'react-paginate';
 import WarningIcon from '@material-ui/icons/Warning';
-import '../styles/paginate.css';
-import '../styles/ClientList.css';
 
+// REDUX
 import { fetchClients, setPage } from '../actions';
 
-
+/**
+ * ClientList Component displays a list of clients according to the user query and the page selected
+ */
 class ClientList extends Component {
 
     handlePageChange = (page) => {

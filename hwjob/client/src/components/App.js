@@ -1,11 +1,18 @@
+// MODULES
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+// COMPONENTS
 import ClientPortal from './ClientsPortal';
 import ClientProfile from './ClientProfile';
 import NavBar from './NavBar';
+
+// STYLESHEETS
 import '../styles/App.css';
 
+/**
+ * App Component defines the entire web application.
+ */
 const App = () => {
     return (
         <div>

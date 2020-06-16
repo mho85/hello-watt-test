@@ -1,12 +1,20 @@
+// MODULES
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 
+// COMPONENTS
 import SearchClient from './SearchClient';
 import ClientList from './ClientList';
 
-const ClientPortal = () => {
+// STYLESHEETS
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 
+/**
+ * ClientPortal Component displays :
+ * - A searchbar for the user
+ * - The list of results (i.e. clients)
+ */
+const ClientPortal = () => {
 
     // console.log("ClientPortal - Props: ", this.props)
     return (

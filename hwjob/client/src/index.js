@@ -1,3 +1,4 @@
+// MODULES
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from "react-router-dom";
@@ -5,10 +6,14 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
+// COMPONENTS
 import App from './components/App';
-import reducers from './reducers';
+
+// STYLESHEETS
 import './styles/index.css';
 
+// REDUX
+import reducers from './reducers';
 const store = createStore(reducers, applyMiddleware(thunk));
 
 

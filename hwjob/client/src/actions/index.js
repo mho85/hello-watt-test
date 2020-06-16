@@ -1,7 +1,14 @@
+// Modules
 import ServerService from '../api/ServerService';
 
+// Constants, variables
 const searchClientURI = "/search-clients";
 
+/**
+ * fetchClients fetches a list of clients (based on below criteria) and dispatches an action to the reducer.
+ * @param {*} query 
+ * @param {*} page 
+ */
 export const fetchClients = (query, page) => {
 
     return async (dispatch) => {
@@ -25,6 +32,10 @@ export const fetchClients = (query, page) => {
 
 };
 
+/**
+ * fetchClient fetches a client's data (based on his/her ID) and dispatches an action to the reducer.
+ * @param {*} id 
+ */
 export const fetchClient = (id) => {
     return async (dispatch) => {
 
@@ -40,6 +51,10 @@ export const fetchClient = (id) => {
     };
 };
 
+/**
+ * setQuery returns an action (payload: query) to the reducer
+ * @param {*} q 
+ */
 export const setQuery = (q) => {
     return {
         type: 'SET_QUERY',
@@ -47,6 +62,10 @@ export const setQuery = (q) => {
     }
 }
 
+/**
+ * setPage returns an action (payload: page) to the reducer
+ * @param {*} page 
+ */
 export const setPage = (page) => {
     return {
         type: 'SET_PAGE',

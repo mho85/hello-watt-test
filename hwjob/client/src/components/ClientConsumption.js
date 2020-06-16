@@ -1,9 +1,16 @@
+// MODULES
 import React, { Component } from 'react';
 import { ResponsiveContainer, AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Area } from 'recharts';
+
+// STYLESHEETS
 import '../styles/ClientConsumption.css';
 
+// DATA
 import consumptionData from '../data.json';
 
+/**
+ * ClientConsumption Component displays a graph of the client consumption during the previous year
+ */
 class ClientConsumption extends Component {
 
     filterData(id, year) {
@@ -16,9 +23,8 @@ class ClientConsumption extends Component {
     render() {
         const lastYear = new Date().getFullYear() - 1;
         const data = this.filterData(this.props.id, lastYear)
-        // console.log(data)
-
         const colorMain = "#1fa5d7";
+        // console.log(data)
 
         return (
             <div id="client-consumption">

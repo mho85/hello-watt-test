@@ -1,3 +1,4 @@
+/* CONTAINERS */
 div#client-details {
 	display: flex;
 	flex-direction: column;
@@ -20,11 +21,44 @@ div#client-details {
 	}
 }
 
+/* ELEMENTS */
 div#client-details h4 {
 	color: #1fa5d7;
 	margin-bottom: 1vh;
 }
 
+div#client-details form {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+}
+
+div#client-details ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	margin-top: 1vh;
+}
+
+div#client-details ul li {
+	margin-top: 1vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+div#client-details #elec-heating {
+	display: flex;
+	font-size: small;
+	flex-direction: row;
+	align-items: center;
+	color: #1fa5d7;
+}
+div#client-details #elec-heating svg {
+	color: yellow;
+}
+
+/* TABLE ELEMENTS */
 div#client-details .MuiTextField-root label {
 	color: #1fa5d7;
 }
@@ -33,12 +67,6 @@ div#client-details .MuiTextField-root input {
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
 		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	color: #163e5c;
-}
-
-div#client-details form {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-end;
 }
 
 div#client-details input[type='submit'] {
@@ -66,29 +94,4 @@ div#client-details input[type='submit']:hover {
 div#client-details .MuiTextField-root .MuiInput-underline::before,
 div#client-details .MuiTextField-root .MuiInput-underline::after {
 	border-bottom-color: #1fa5d7;
-}
-
-div#client-details ul {
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	margin-top: 1vh;
-}
-
-div#client-details ul li {
-	margin-top: 1vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-div#client-details #elec-heating {
-	display: flex;
-	font-size: small;
-	flex-direction: row;
-	align-items: center;
-	color: #1fa5d7;
-}
-div#client-details #elec-heating svg {
-	color: yellow;
 }

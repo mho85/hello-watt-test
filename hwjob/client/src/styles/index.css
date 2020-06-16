@@ -14,7 +14,3 @@ body {
 body * {
 	outline: none;
 }
-
-a:link {
-	text-decoration: none;
-}

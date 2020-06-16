@@ -1,11 +1,20 @@
+// MODULES
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import PersonIcon from '@material-ui/icons/Person';
 
+// COMPONENTS
 import ClientDetails from './ClientDetails';
 import ClientConsumption from './ClientConsumption';
 
+// STYLESHEETS
+import PersonIcon from '@material-ui/icons/Person';
 
+/**
+ * ClientProfile displays:
+ * - The client details
+ * - The client consumption during the previous year
+ * @param {*} props 
+ */
 const ClientProfile = (props) => {
 
     const id = Number(props.match.params.id);
@@ -13,7 +22,7 @@ const ClientProfile = (props) => {
     return (
         <div>
             <Helmet>
-                <title>Client profile | Hello Watt</title>
+                <title>Client Profile | Hello Watt</title>
             </Helmet>
             <div className="title">
                 <PersonIcon />

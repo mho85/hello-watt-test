@@ -1,3 +1,4 @@
+/* CONTAINERS */
 div#search-client {
 	display: flex;
 	justify-content: center;
@@ -19,6 +20,7 @@ div#search-client {
 	}
 }
 
+/* ELEMENTS */
 div#search-client .MuiTextField-root label {
 	color: #1fa5d7;
 }

@@ -1,4 +1,7 @@
+// MODULES
 import React from 'react';
+
+// STYLESHEETS
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -20,7 +23,9 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-
+/**
+ * NavBar Component displays a traditional navigation bar with a hamburger icon.
+ */
 const NavBar = () => {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
