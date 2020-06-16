@@ -1,0 +1,13 @@
+/* CONTAINERS */
+div.custom-tooltip {
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 1px solid #1fa5d7;
+	padding: 10px 20px;
+	border-radius: 20px;
+}
+
+/* ELEMENTS */
+div.custom-tooltip span.value {
+	color: #1fa5d7;
+	font-weight: 700;
+}

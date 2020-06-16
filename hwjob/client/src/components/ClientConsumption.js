@@ -2,6 +2,9 @@
 import React, { Component } from 'react';
 import { ResponsiveContainer, AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Area } from 'recharts';
 
+// COMPONENTS
+import CustomTooltip from './CustomTooltip';
+
 // STYLESHEETS
 import '../styles/ClientConsumption.css';
 
@@ -41,7 +44,7 @@ class ClientConsumption extends Component {
                         <XAxis dataKey="month" />
                         <YAxis stroke={colorMain} />
                         <CartesianGrid strokeDasharray="5 5" />
-                        <Tooltip />
+                        <Tooltip content={<CustomTooltip />} />
                         <Area type="monotone" dataKey="kwh_consumed" stroke={colorMain} fillOpacity={1} fill="url(#color)" />
                     </AreaChart>
                 </ResponsiveContainer>
