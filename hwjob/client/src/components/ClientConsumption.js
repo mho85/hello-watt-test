@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { ResponsiveContainer, AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Area } from 'recharts';
 import '../styles/ClientConsumption.css';
 
@@ -45,10 +44,4 @@ class ClientConsumption extends Component {
     }
 };
 
-// const mapStateToProps = (state) => {
-
-// }
-
-// const mapDispatchToProps = {};
-
-export default connect(null)(ClientConsumption);
+export default ClientConsumption;
