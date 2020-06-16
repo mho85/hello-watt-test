@@ -18,8 +18,10 @@ const ClientPortal = () => {
                 <PeopleAltIcon />
                 <h3>Client Portal</h3>
             </div>
-            <SearchClient />
-            <ClientList />
+            <div className="main-content">
+                <SearchClient />
+                <ClientList />
+            </div>
         </div>
     );
 };

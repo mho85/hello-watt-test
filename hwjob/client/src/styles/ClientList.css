@@ -19,3 +19,11 @@ div#client-list table th {
 div#client-list table td {
 	color: gray;
 }
+
+@media (min-width: 1024px) {
+	div#client-list {
+		margin: 5vh 0;
+		width: 60%;
+		justify-content: left;
+	}
+}

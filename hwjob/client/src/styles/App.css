@@ -52,3 +52,11 @@ div.link:hover {
 	transform: scale(2.5);
 	color: orange;
 }
+
+/* SCREEN RESOLUTIONS */
+@media (min-width: 1024px) {
+	div.main-content {
+		display: flex;
+		justify-content: space-evenly;
+	}
+}

@@ -8,6 +8,11 @@ ul.pagination {
 	margin: 2vh 2vw;
 	padding: 5px 15px;
 }
+@media (min-width: 1024px) {
+	ul.pagination {
+		margin-top: 5vh;
+	}
+}
 
 ul.pagination li {
 	color: white;
