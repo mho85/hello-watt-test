@@ -19,8 +19,10 @@ const ClientProfile = (props) => {
                 <PersonIcon />
                 <h3>Client Profile</h3>
             </div>
-            <ClientDetails id={id} />
-            <ClientConsumption id={id} />
+            <div className="main-content">
+                <ClientDetails id={id} />
+                <ClientConsumption id={id} />
+            </div>
         </div>
     );
 };
