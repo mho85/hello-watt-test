@@ -1,0 +1,39 @@
+@import './_colors.scss';
+@import './_fonts.scss';
+
+@media (min-width: 1024px) {
+	div#client-list {
+		width: 60%;
+		justify-content: left;
+		margin: 5vh 0;
+	}
+}
+
+div#client-list {
+	div.MuiPaper-root {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	div.MuiPaper-elevation1 {
+		box-shadow: none;
+	}
+
+	table {
+		width: 95%;
+
+		thead {
+			background-color: $primary-dark-color;
+		}
+
+		th {
+			color: $primary-light-color;
+		}
+
+		td {
+			color: gray;
+		}
+	}
+}

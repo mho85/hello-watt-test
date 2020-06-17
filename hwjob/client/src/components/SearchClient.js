@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 // STYLESHEETS
 import TextField from '@material-ui/core/TextField';
-import '../styles/SearchClient.css';
+import '../styles/scss/SearchClient.scss';
 
 // REDUX
 import { setQuery } from '../actions';

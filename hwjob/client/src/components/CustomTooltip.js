@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // STYLESHEETS
-import '../styles/CustomTooltip.css';
+import '../styles/scss/CustomTooltip.scss';
 
 // CONSTANTS, VARIABLES
 const months = [

@@ -10,7 +10,7 @@ import thunk from 'redux-thunk';
 import App from './components/App';
 
 // STYLESHEETS
-import './styles/index.css';
+import './styles/scss/index.scss';
 
 // REDUX
 import reducers from './reducers';

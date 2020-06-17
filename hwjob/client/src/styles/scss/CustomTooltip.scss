@@ -1,0 +1,14 @@
+@import './_colors.scss';
+@import './_fonts.scss';
+
+div.custom-tooltip {
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 1px solid $primary-color;
+	border-radius: 20px;
+	padding: 10px 20px;
+
+	span.value {
+		color: $primary-color;
+		font-weight: 700;
+	}
+}

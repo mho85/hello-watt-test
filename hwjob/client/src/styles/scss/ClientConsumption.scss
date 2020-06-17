@@ -1,0 +1,21 @@
+@import './_colors.scss';
+@import './_fonts.scss';
+
+div#client-consumption {
+	text-align: center;
+	background-color: white;
+	margin: 0 5vw 5vh;
+	padding: 10px 0;
+	border: 1px solid $primary-color;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 3px 0px $primary-color;
+	-moz-box-shadow: 0px 0px 3px 0px $primary-color;
+	box-shadow: 0px 0px 3px 0px $primary-color;
+}
+@media (min-width: 1024px) {
+	div#client-consumption {
+		width: 60%;
+		justify-content: left;
+		margin: 5vh 0;
+	}
+}

@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 // STYLESHEETS
-import '../styles/paginate.css';
-import '../styles/ClientList.css';
+import '../styles/scss/paginate.scss';
+import '../styles/scss/ClientList.scss';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
