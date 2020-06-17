@@ -6,7 +6,7 @@ import { ResponsiveContainer, AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, A
 import CustomTooltip from './CustomTooltip';
 
 // STYLESHEETS
-import '../styles/scss/ClientConsumption.scss';
+import '../styles/ClientConsumption.scss';
 
 // DATA
 import consumptionData from '../data.json';

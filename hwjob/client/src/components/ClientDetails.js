@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import ServerService from '../api/ServerService';
 
 // STYLESHEETS
-import '../styles/scss/ClientDetails.scss';
+import '../styles/ClientDetails.scss';
 import TextField from '@material-ui/core/TextField';
 import ErrorIcon from '@material-ui/icons/Error';
 import FlashOnIcon from '@material-ui/icons/FlashOn';

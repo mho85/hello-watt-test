@@ -8,7 +8,7 @@ import ClientProfile from './ClientProfile';
 import NavBar from './NavBar';
 
 // STYLESHEETS
-import '../styles/scss/App.scss';
+import '../styles/App.scss';
 
 /**
  * App Component defines the entire web application.
