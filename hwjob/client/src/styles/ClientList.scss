@@ -31,6 +31,12 @@ div#client-list {
 		th {
 			color: $primary-light-color;
 		}
+		th:nth-child(odd) {
+			width: 20%;
+		}
+		th:nth-child(2) {
+			width: 60%;
+		}
 
 		td {
 			color: $primary-dark-color;
