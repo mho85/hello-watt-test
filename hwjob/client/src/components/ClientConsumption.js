@@ -1,6 +1,7 @@
 // MODULES
 import React, { Component } from 'react';
-import { ResponsiveContainer, AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Area } from 'recharts';
+import { ResponsiveContainer, AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Area, ReferenceLine, Label } from 'recharts';
+import { computeAvg, computeMin, computeMax } from '../helpers/consumption';
 
 // COMPONENTS
 import CustomTooltip from './CustomTooltip';
@@ -27,7 +28,11 @@ class ClientConsumption extends Component {
         const lastYear = new Date().getFullYear() - 1;
         const data = this.filterData(this.props.id, lastYear)
         const colorMain = "#1fa5d7";
-        // console.log(data)
+        const avgColor = "purple";
+        const minMaxColor = "#163e5c";
+        const avg = computeAvg(data);
+        const min = computeMin(data);
+        const max = computeMax(data);
 
         return (
             <div id="client-consumption">
@@ -46,6 +51,15 @@ class ClientConsumption extends Component {
                         <CartesianGrid strokeDasharray="5 5" />
                         <Tooltip content={<CustomTooltip />} />
                         <Area type="monotone" dataKey="kwh_consumed" stroke={colorMain} fillOpacity={1} fill="url(#color)" />
+                        <ReferenceLine y={avg} stroke={avgColor} strokeDasharray="10 3">
+                            <Label value={`AVG: ${Math.round(avg)} KWh`} position="top" fill={avgColor} />
+                        </ReferenceLine>
+                        <ReferenceLine y={min} stroke={minMaxColor} strokeDasharray="10 3">
+                            <Label value={`MIN: ${Math.round(min)} KWh`} position="top" fill={minMaxColor} />
+                        </ReferenceLine>
+                        <ReferenceLine y={max} stroke={minMaxColor} strokeDasharray="10 3">
+                            <Label value={`MAX: ${Math.round(max)} KWh`} position="top" fill={minMaxColor} />
+                        </ReferenceLine>
                     </AreaChart>
                 </ResponsiveContainer>
             </div>
