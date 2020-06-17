@@ -17,11 +17,26 @@ import consumptionData from '../data.json';
  */
 class ClientConsumption extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            average: true,
+            minimum: true,
+            maximum: true
+        }
+    }
+
     filterData(id, year) {
         return consumptionData.filter(
             el => el.client_id === id &&
                 el.year === year
         );
+    }
+
+    handleChange = ({ target }) => {
+        const { name, checked, value, type } = target;
+        const val = type === 'checkbox' ? checked : value
+        this.setState({ [name]: val });
     }
 
     render() {
@@ -51,17 +66,43 @@ class ClientConsumption extends Component {
                         <CartesianGrid strokeDasharray="5 5" />
                         <Tooltip content={<CustomTooltip />} />
                         <Area type="monotone" dataKey="kwh_consumed" stroke={colorMain} fillOpacity={1} fill="url(#color)" />
-                        <ReferenceLine y={avg} stroke={avgColor} strokeDasharray="10 3">
+                        {this.state.average && <ReferenceLine y={avg} stroke={avgColor} strokeDasharray="10 3">
                             <Label value={`AVG: ${Math.round(avg)} KWh`} position="top" fill={avgColor} />
-                        </ReferenceLine>
-                        <ReferenceLine y={min} stroke={minMaxColor} strokeDasharray="10 3">
+                        </ReferenceLine>}
+                        {this.state.minimum && <ReferenceLine y={min} stroke={minMaxColor} strokeDasharray="10 3">
                             <Label value={`MIN: ${Math.round(min)} KWh`} position="top" fill={minMaxColor} />
-                        </ReferenceLine>
-                        <ReferenceLine y={max} stroke={minMaxColor} strokeDasharray="10 3">
+                        </ReferenceLine>}
+                        {this.state.maximum && <ReferenceLine y={max} stroke={minMaxColor} strokeDasharray="10 3">
                             <Label value={`MAX: ${Math.round(max)} KWh`} position="top" fill={minMaxColor} />
-                        </ReferenceLine>
+                        </ReferenceLine>}
                     </AreaChart>
                 </ResponsiveContainer>
+                <div className="options">
+                    <input
+                        type="checkbox"
+                        id="average"
+                        name="average"
+                        checked={this.state.average}
+                        onChange={this.handleChange}
+                    />
+                    <label htmlFor="average">Display average value</label>
+                    <input
+                        type="checkbox"
+                        id="minimum"
+                        name="minimum"
+                        checked={this.state.minimum}
+                        onChange={this.handleChange}
+                    />
+                    <label htmlFor="minimum">Display minimum value</label>
+                    <input
+                        type="checkbox"
+                        id="maximum"
+                        name="maximum"
+                        checked={this.state.maximum}
+                        onChange={this.handleChange}
+                    />
+                    <label htmlFor="maximum">Display maximum value</label>
+                </div>
             </div>
         );
     }
