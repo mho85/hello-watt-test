@@ -11,11 +11,56 @@ div#client-consumption {
 	-webkit-box-shadow: 0px 0px 3px 0px $primary-color;
 	-moz-box-shadow: 0px 0px 3px 0px $primary-color;
 	box-shadow: 0px 0px 3px 0px $primary-color;
+
+	div.option-container {
+		display: flex;
+		flex-direction: column;
+		background-color: $primary-light-color;
+		margin: 3vh 5vw 1vh;
+		padding: 1vh 5vw 0;
+		border-radius: 10px;
+
+		h5 {
+			color: $primary-color;
+		}
+
+		div.option-list {
+			flex-direction: row;
+			justify-content: space-evenly;
+
+			label:nth-of-type(odd) {
+				svg {
+					fill: $primary-dark-color;
+				}
+				span {
+					color: $primary-dark-color;
+				}
+			}
+			label:nth-of-type(even) {
+				svg {
+					fill: purple;
+				}
+				span {
+					color: purple;
+				}
+			}
+
+			span {
+				font-size: small;
+			}
+		}
+	}
 }
 @media (min-width: 1024px) {
 	div#client-consumption {
 		width: 60%;
 		justify-content: left;
 		margin: 5vh 0;
+
+		div.option-container {
+			align-items: flex-start;
+			padding: 1vh 2vw;
+			width: 41%;
+		}
 	}
 }
